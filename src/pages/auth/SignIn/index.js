@@ -3,15 +3,15 @@ import { Form } from '@unform/mobile';
 import * as Yup from 'yup';
 import { useNetInfo } from '@react-native-community/netinfo';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import Modal from '../../components/Modal/Message';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
+import Modal from '../../../components/Modal/Message';
 
-import Main from '../../styles/Main';
+import Main from '../../../styles/Main';
 
 import { Container } from './style';
 
-import getValidationErrors from '../../utils/getValidationErrors';
+import getValidationErrors from '../../../utils/getValidationErrors';
 
 const SignIn = () => {
   const formRef = useRef(null);
