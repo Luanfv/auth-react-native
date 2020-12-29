@@ -6,7 +6,7 @@ import TxtBold from '../../styles/TxtBold';
 const Button = ({ children, isSecondary, ...rest }) => {
     return (
         <Container {...rest} isSecondary={!isSecondary}>
-            <TxtBold size="18px" color={!isSecondary ? '#EFF2FB' : '#208a4d'}>
+            <TxtBold size="18px" color={!isSecondary ? '#EFF2FB' : '#136b54'}>
                 { children }
             </TxtBold>
         </Container>
