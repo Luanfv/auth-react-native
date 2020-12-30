@@ -9,18 +9,28 @@ export const InputStyle = styled.TextInput`
     ${props => props.error && css`
         border: #FA5858 solid 1px;
     `}
+
+    ${props => props.focus && css`
+        border: #136b54 solid 1px;
+    `}
 `;
 
 export const Container = styled.View`
     background: #fff;
     flex-direction: row;
-    border: #979797 solid 1px;
-    border-radius: 3px;
+    border: 0;
+    border-radius: 8px;
+    border-bottom-width: 2px;
+    border-color: #979797;
     align-items: center;
     margin-top: 10px;
 
     ${props => props.error && css`
         border: #FA5858 solid 1px;
+    `}
+
+    ${props => props.focus && css`
+        border: #136b54 solid 1px;
     `}
 `;
 
@@ -37,6 +47,10 @@ export const Icon = styled(SimpleLineIcons)`
 
     ${props => props.error && css`
         color: #FA5858;
+    `}
+
+    ${props => props.focus && css`
+        color: #136b54;
     `}
 `;
 

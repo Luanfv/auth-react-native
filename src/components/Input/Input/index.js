@@ -1,5 +1,6 @@
 import React, { 
     useEffect, 
+    useState,
     useRef, 
     useCallback, 
     useImperativeHandle, 
@@ -13,6 +14,8 @@ const Input = ({ name, onChangeText, rawValue, iconName, ...rest }, ref) => {
     const { registerField, defaultValue = '', fieldName, error } = useField(name);
     const inputValueRef = useRef({ value: defaultValue });
     const inputElementRef = useRef(null);
+
+    const [isFocus, setIsFocus] = useState(false);
 
     useImperativeHandle(ref, () => ({
         focus() {
@@ -56,6 +59,9 @@ const Input = ({ name, onChangeText, rawValue, iconName, ...rest }, ref) => {
             <InputOfIcon 
                 ref={inputElementRef}
                 name={name} 
+                focus={isFocus}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
                 defaultValue={defaultValue}
                 onChangeText={value => handleOnChange(value)}
                 {...rest}
@@ -66,6 +72,9 @@ const Input = ({ name, onChangeText, rawValue, iconName, ...rest }, ref) => {
             error={error}
             ref={inputElementRef}
             name={name} 
+            focus={isFocus}
+            onFocus={() => setIsFocus(true)}
+            onBlur={() => setIsFocus(false)}
             defaultValue={defaultValue}
             onChangeText={value => handleOnChange(value)}
             {...rest}

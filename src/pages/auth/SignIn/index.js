@@ -1,7 +1,9 @@
 import React, { useRef, useState, useCallback } from 'react';
+import { TouchableOpacity } from 'react-native';
 import { Form } from '@unform/mobile';
 import * as Yup from 'yup';
 import { useNetInfo } from '@react-native-community/netinfo';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
@@ -9,17 +11,21 @@ import Modal from '../../../components/Modal/Message';
 
 import Main from '../../../styles/Main';
 
-import { Container } from './style';
+import { Container, ContainerIcon, Animation, AuthIcon } from './style';
 
 import getValidationErrors from '../../../utils/getValidationErrors';
 
-const SignIn = () => {
+import animationFail from '../../../assets/animations/bio-fail.json';
+import animationSuccess from '../../../assets/animations/bio-success.json';
+
+const SignIn = ({ navigation }) => {
   const formRef = useRef(null);
   const passwordRef = useRef(null);
   const netInfo = useNetInfo();
 
   const [messageOfError, setMessageOfError] = useState(undefined);
   const [isNotConnected, setIsNotConnected] = useState(false);
+  const [faseAuth, setFaseAuth] = useState(0);
 
   const handleSubmit = useCallback(async (data) => {
     try {
@@ -40,19 +46,49 @@ const SignIn = () => {
         abortEarly: false,
       });
 
+      setFaseAuth(2);
+
       console.log('cheguei no fim');
     }
     catch (err) {
       const errors = getValidationErrors(err);
       formRef.current.setErrors(errors);
 
+      setFaseAuth(1);
+
       console.log('deu ruim');
     }
   }, [netInfo, getValidationErrors]);
 
   return (
-    <Main contentContainerStyle={{ flex: 1 }}>
+    <Main contentContainerStyle={{ flex: 1 }} >
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Icon name="arrow-left" size={22} color="#979797" />
+      </TouchableOpacity>
+
       <Container>
+        <ContainerIcon>
+
+          {
+            faseAuth === 0
+            &&
+            <AuthIcon source={require('../../../assets/images/auth-bio.png')} resizeMode="contain" loop />
+          }
+
+          {
+            faseAuth === 1
+            &&
+            <Animation source={animationFail} resizeMode="cover" autoPlay />
+          }
+
+
+          {
+            faseAuth === 2
+            &&
+            <Animation source={animationSuccess} resizeMode="cover" autoPlay />
+          }
+        </ContainerIcon>
+
         <Form ref={formRef} onSubmit={handleSubmit}>
           <Input 
             name="email" 
