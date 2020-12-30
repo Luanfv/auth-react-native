@@ -54,12 +54,11 @@ const Input = ({ name, onChangeText, rawValue, iconName, ...rest }, ref) => {
     return (
         !!iconName
         ?
-        <Container error={error}>
-            <Icon name={iconName} size={20} error={error} />
+        <Container error={error} isFocus={isFocus}>
+            <Icon name={iconName} size={20} error={error} isFocus={isFocus} />
             <InputOfIcon 
                 ref={inputElementRef}
-                name={name} 
-                focus={isFocus}
+                name={name}                
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 defaultValue={defaultValue}
@@ -72,7 +71,7 @@ const Input = ({ name, onChangeText, rawValue, iconName, ...rest }, ref) => {
             error={error}
             ref={inputElementRef}
             name={name} 
-            focus={isFocus}
+            isFocus={isFocus}
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             defaultValue={defaultValue}

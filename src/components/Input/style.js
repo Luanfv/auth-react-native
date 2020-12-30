@@ -2,16 +2,16 @@ import styled, { css } from 'styled-components/native';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 export const InputStyle = styled.TextInput`
-    border: #979797 solid 1px;
+    border: #979797;
     font-size: 18px;
     padding: 10px;
 
     ${props => props.error && css`
-        border: #FA5858 solid 1px;
+        border-color: #FA5858;
     `}
 
-    ${props => props.focus && css`
-        border: #136b54 solid 1px;
+    ${props => props.isFocus && css`
+        border-color: #136b54;
     `}
 `;
 
@@ -26,11 +26,11 @@ export const Container = styled.View`
     margin-top: 10px;
 
     ${props => props.error && css`
-        border: #FA5858 solid 1px;
+        border-color: #FA5858;
     `}
 
-    ${props => props.focus && css`
-        border: #136b54 solid 1px;
+    ${props => props.isFocus && css`
+        border-color: #136b54;
     `}
 `;
 
@@ -49,7 +49,7 @@ export const Icon = styled(SimpleLineIcons)`
         color: #FA5858;
     `}
 
-    ${props => props.focus && css`
+    ${props => props.isFocus && css`
         color: #136b54;
     `}
 `;
