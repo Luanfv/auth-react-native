@@ -16,10 +16,10 @@ const Modal = ({ open, text, yes, no }) => {
                     <TwoColumn>
                         <Button 
                             width="50%"
-                            background="#fba91a" 
+                            background="#136b54" 
                             onPress={yes}
                         >
-                            <TxtBold size="18px">
+                            <TxtBold size="18px" color="#fff">
                                 SIM
                             </TxtBold>
                         </Button>

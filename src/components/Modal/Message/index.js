@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalContainer from 'react-native-modal';
 
-import { Container, ContainerButtons, Button } from '../style';
+import { Container, Button } from '../style';
 import TxtBold from '../../../styles/TxtBold'; 
 
 const Modal = ({ open, text, action }) => {
@@ -12,11 +12,11 @@ const Modal = ({ open, text, action }) => {
                     { text }
                 </TxtBold>
                 <Button 
-                    background="#fba91a" 
+                    background="#136b54" 
                     wfull
                     onPress={action}
                 >
-                    <TxtBold size="18px">
+                    <TxtBold size="18px" color="#fff">
                         OK
                     </TxtBold>
                 </Button>

@@ -51,12 +51,22 @@ const SignIn = ({ navigation }) => {
       console.log('cheguei no fim');
     }
     catch (err) {
-      const errors = getValidationErrors(err);
-      formRef.current.setErrors(errors);
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+        formRef.current.setErrors(errors);
+        
+        if (errors.email) {
+          setMessageOfError(errors.email);
+        }
+        else if (errors.password) {
+          setMessageOfError(errors.password);
+        }
+
+        return;
+      }
 
       setFaseAuth(1);
-
-      console.log('deu ruim');
+      setMessageOfError('Credenciais inválidas!');
     }
   }, [netInfo, getValidationErrors]);
 

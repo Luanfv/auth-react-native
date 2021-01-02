@@ -49,10 +49,27 @@ const SignUp = ({ navigation }) => {
       console.log('cheguei no fim');
     }
     catch (err) {
-      const errors = getValidationErrors(err);
-      formRef.current.setErrors(errors);
+      if (err instanceof Yup.ValidationError) {
+        const errors = getValidationErrors(err);
+        formRef.current.setErrors(errors);
 
-      console.log('deu ruim');
+        if (!!errors.name) {
+          setMessageOfError(errors.name);
+        }
+        else if (errors.email) {
+          setMessageOfError(errors.email);
+        }
+        else if (errors.password) {
+          setMessageOfError(errors.password);
+        }
+        else if (errors.confirmation_password) {
+          setMessageOfError(errors.confirmation_password);
+        }
+
+        return;
+      }
+
+      setMessageOfError('Verifique os campos e tente novamente');
     }
   }, [netInfo, getValidationErrors]);
 
@@ -133,7 +150,7 @@ const SignUp = ({ navigation }) => {
         />
         <Modal 
           open={isNotConnected}
-          text="Você precisa está com internet para entrar em uma conta"
+          text="Você precisa está com internet para se registrar"
           action={() => setIsNotConnected(false)}
         />
       </Main>
