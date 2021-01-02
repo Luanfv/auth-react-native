@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
 import Button from '../../../components/Button';
 
@@ -11,7 +11,6 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1,}}>
       <Container>
-        <StatusBar barStyle="light-content" backgroundColor="#151515" />
         <Animation resizeMode="contain" source={animation} autoPlay />
 
         <View>

@@ -5,6 +5,8 @@ import * as Yup from 'yup';
 import { useNetInfo } from '@react-native-community/netinfo';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
+import { useAuth } from '../../../hooks/auth';
+
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import Modal from '../../../components/Modal/Message';
@@ -27,6 +29,8 @@ const SignIn = ({ navigation }) => {
   const [isNotConnected, setIsNotConnected] = useState(false);
   const [faseAuth, setFaseAuth] = useState(0);
 
+  const { signIn } = useAuth();
+
   const handleSubmit = useCallback(async (data) => {
     try {
       if (!netInfo.isConnected) {
@@ -46,9 +50,16 @@ const SignIn = ({ navigation }) => {
         abortEarly: false,
       });
 
-      setFaseAuth(2);
+      const messageOfError = await signIn(formRef);
 
-      console.log('cheguei no fim');
+      if (!!messageOfError) {
+        setFaseAuth(1);
+        setMessageOfError(messageOfError);
+
+        return;
+      }
+
+      setFaseAuth(2);
     }
     catch (err) {
       if (err instanceof Yup.ValidationError) {
@@ -61,14 +72,9 @@ const SignIn = ({ navigation }) => {
         else if (errors.password) {
           setMessageOfError(errors.password);
         }
-
-        return;
       }
-
-      setFaseAuth(1);
-      setMessageOfError('Credenciais inválidas!');
     }
-  }, [netInfo, getValidationErrors]);
+  }, [netInfo, getValidationErrors, signIn]);
 
   return (
     <KeyboardAvoidingView 
