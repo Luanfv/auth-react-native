@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import Lottie from 'lottie-react-native';
 
+export const Back = styled.TouchableOpacity`
+  margin: 20px 0;
+`;
+
 export const Container = styled.View`
   margin: auto 0;
 `;
