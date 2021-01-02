@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
           <Button onPress={() => navigation.navigate('SignIn')}>
             Entrar
           </Button>
-          <Button isSecondary>
+          <Button isSecondary onPress={() => navigation.navigate('SignUp')}>
             Cadastrar
           </Button>
         </View>
