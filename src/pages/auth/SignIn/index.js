@@ -93,7 +93,7 @@ const SignIn = ({ navigation }) => {
             {
               faseAuth === 0
               &&
-              <AuthIcon source={require('../../../assets/images/auth-bio.png')} resizeMode="contain" loop />
+              <AuthIcon source={require('../../../assets/images/auth-bio.png')} resizeMode="contain" />
             }
 
             {
@@ -106,7 +106,7 @@ const SignIn = ({ navigation }) => {
             {
               faseAuth === 2
               &&
-              <Animation source={animationSuccess} resizeMode="cover" autoPlay />
+              <Animation source={animationSuccess} resizeMode="cover" autoPlay loop={false} />
             }
           </ContainerIcon>
 

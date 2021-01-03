@@ -2,6 +2,7 @@ import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import AuthRoutes from './auth.routes';
+import AppRoutes from './app.routes';
 import { useAuth } from '../hooks/auth';
 
 const Routes = () => {
@@ -20,7 +21,7 @@ const Routes = () => {
     );
   }
 
-  return !user.id ? <AuthRoutes /> : <View />;
+  return !user.id ? <AuthRoutes /> : <AppRoutes />;
 }
 
 export default Routes;

@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     loadStoragedData();
   }, [setIsLoading]);
 
-  const signIn = useCallback(async (formRef) => {
+  const signIn = useCallback((formRef) => {
     try {
       const { email, password } = formRef.current.getData();
 
@@ -36,9 +36,11 @@ export const AuthProvider = ({ children }) => {
         name: 'Luan',
         email: email,
       };
-      
-      await AsyncStorage.setItem('@app:user', JSON.stringify(user));
-      setData(user);
+
+      setTimeout(async () => {
+        await AsyncStorage.setItem('@app:user', JSON.stringify(user));
+        setData(user);
+      }, 2500);
 
       return false;
     }
