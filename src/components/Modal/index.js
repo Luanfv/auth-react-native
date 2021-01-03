@@ -15,7 +15,6 @@ const Modal = ({ open, text, yes, no }) => {
                 <ContainerButtons>
                     <TwoColumn>
                         <Button 
-                            width="50%"
                             background="#136b54" 
                             onPress={yes}
                         >
@@ -24,7 +23,6 @@ const Modal = ({ open, text, yes, no }) => {
                             </TxtBold>
                         </Button>
                         <Button 
-                            width="50%"
                             onPress={no}
                         >
                             <TxtBold size="18px">

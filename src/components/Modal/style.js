@@ -13,7 +13,7 @@ export const ContainerButtons = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: 50%;
+    width: 49%;
     padding: 11px 28px;
     background: #f0f0f0;
     color: #414141;
