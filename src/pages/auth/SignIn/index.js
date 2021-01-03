@@ -139,7 +139,7 @@ const SignIn = ({ navigation }) => {
           </Form>
 
           <Button onPress={() => formRef.current.submitForm()}>
-            ENTRAR
+            Entrar
           </Button>
         </Container>
 

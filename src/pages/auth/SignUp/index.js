@@ -139,7 +139,7 @@ const SignUp = ({ navigation }) => {
           </Form>
 
           <Button onPress={() => formRef.current.submitForm()}>
-            CADASTRAR
+            Cadastrar
           </Button>
         </Container>
 
