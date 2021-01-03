@@ -5,15 +5,17 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from '../pages/app/Home';
 import Profile from '../pages/app/Profile';
 
+import { colorDark, colorSecondary } from '../utils/colors'
+
 const Tab = createBottomTabNavigator();
 
 const AppRoutes = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: '#f2f2f2',
-        inactiveTintColor: '#151515',
-        activeBackgroundColor: '#151515',
+        activeTintColor: colorSecondary,
+        inactiveTintColor: colorDark,
+        activeBackgroundColor: colorDark,
         showLabel: false,
       }}
 

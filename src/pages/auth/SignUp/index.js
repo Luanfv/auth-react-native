@@ -15,6 +15,8 @@ import { Back, Container } from './style';
 
 import getValidationErrors from '../../../utils/getValidationErrors';
 
+import { colorDark } from '../../../utils/colors';
+
 const SignUp = ({ navigation }) => {
   const formRef = useRef(null);
   const emailRef = useRef(null);
@@ -81,7 +83,7 @@ const SignUp = ({ navigation }) => {
     >
       <Main>
         <Back onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back" size={26} color="#151515" />
+          <Icon name="arrow-back" size={26} color={colorDark} />
         </Back>
 
         <Container>

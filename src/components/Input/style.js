@@ -1,17 +1,19 @@
 import styled, { css } from 'styled-components/native';
 import SimpleLineIcons from 'react-native-vector-icons/Ionicons';
 
+import { colorPrimary, colorError } from '../../utils/colors';
+
 export const InputStyle = styled.TextInput`
     border: #979797;
     font-size: 18px;
     padding: 10px;
 
     ${props => props.error && css`
-        border-color: #FA5858;
+        border-color: ${colorError};
     `}
 
     ${props => props.isFocus && css`
-        border-color: #136b54;
+        border-color: ${colorPrimary};
     `}
 `;
 
@@ -26,11 +28,11 @@ export const Container = styled.View`
     margin-top: 10px;
 
     ${props => props.error && css`
-        border-color: #FA5858;
+        border-color: ${colorError};
     `}
 
     ${props => props.isFocus && css`
-        border-color: #136b54;
+        border-color: ${colorPrimary};
     `}
 `;
 
@@ -46,11 +48,11 @@ export const Icon = styled(SimpleLineIcons)`
     color: #979797;
 
     ${props => props.error && css`
-        color: #FA5858;
+        color: ${colorError};
     `}
 
     ${props => props.isFocus && css`
-        color: #136b54;
+        color: ${colorPrimary};
     `}
 `;
 

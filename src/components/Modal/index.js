@@ -5,6 +5,8 @@ import { Container, ContainerButtons, Button } from './style';
 import TxtBold from './../../styles/TxtBold'; 
 import TwoColumn from './../../styles/TwoColumn';
 
+import { colorPrimary } from '../../utils/colors';
+
 const Modal = ({ open, text, yes, no }) => {
     return (
         <ModalContainer isVisible={open}>
@@ -15,7 +17,7 @@ const Modal = ({ open, text, yes, no }) => {
                 <ContainerButtons>
                     <TwoColumn>
                         <Button 
-                            background="#136b54" 
+                            background={colorPrimary} 
                             onPress={yes}
                         >
                             <TxtBold size="18px" color="#fff">

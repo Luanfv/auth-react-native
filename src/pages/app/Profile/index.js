@@ -4,12 +4,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useAuth } from '../../../hooks/auth';
 
 import Main from '../../../styles/Main';
-import Txt from '../../../styles/Txt';
 import TxtBold from '../../../styles/TxtBold';
 
 import Modal from '../../../components/Modal';
 
-import { Container, ProfileContainer, ProfileAvatar, Option, OptionIcon } from './style';
+import Option from './Option';
+import { Container, ProfileContainer, ProfileAvatar } from './style';
 
 export const Profile = () => {
   const [isModal, setIsModal] = useState(false);
@@ -36,30 +36,19 @@ export const Profile = () => {
           </TxtBold>
         </ProfileContainer>
 
-        <Option>
-          <OptionIcon>
-            <Icon name="person-outline" size={24} color="#151515" />
-          </OptionIcon>
-          <Txt>
-            Editar perfil
-          </Txt>
-        </Option>
-        <Option>
-          <OptionIcon>
-            <Icon name="lock-closed-outline" size={24} color="#151515" />
-          </OptionIcon>
-          <Txt>
-            Trocar senha
-          </Txt>
-        </Option>
-        <Option onPress={() => setIsModal(true)}>
-          <OptionIcon>
-            <Icon name="md-exit-outline" size={24} color="#151515" />
-          </OptionIcon>
-          <Txt>
-            Sair
-          </Txt>
-        </Option>
+        <Option 
+          icon="person-outline" 
+          name="Editar perfil" 
+        />
+        <Option 
+          icon="lock-closed-outline" 
+          name="Trocar senha" 
+        />
+        <Option 
+          icon="md-exit-outline" 
+          name="Sair" 
+          onPress={() => setIsModal(true)} 
+        />
       </Container>
 
       <Modal 

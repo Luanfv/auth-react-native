@@ -4,6 +4,8 @@ import ModalContainer from 'react-native-modal';
 import { Container, Button } from '../style';
 import TxtBold from '../../../styles/TxtBold'; 
 
+import { colorPrimary } from '../../../utils/colors';
+
 const Modal = ({ open, text, action }) => {
     return (
         <ModalContainer isVisible={open}>
@@ -12,7 +14,7 @@ const Modal = ({ open, text, action }) => {
                     { text }
                 </TxtBold>
                 <Button 
-                    background="#136b54" 
+                    background={colorPrimary} 
                     wfull
                     onPress={action}
                 >

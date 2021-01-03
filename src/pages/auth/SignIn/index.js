@@ -20,6 +20,8 @@ import getValidationErrors from '../../../utils/getValidationErrors';
 import animationFail from '../../../assets/animations/bio-fail.json';
 import animationSuccess from '../../../assets/animations/bio-success.json';
 
+import { colorDark } from '../../../utils/colors';
+
 const SignIn = ({ navigation }) => {
   const formRef = useRef(null);
   const passwordRef = useRef(null);
@@ -84,7 +86,7 @@ const SignIn = ({ navigation }) => {
     >
       <Main>
         <Back onPress={() => navigation.goBack()}>
-          <Icon name="arrow-back" size={26} color="#151515" />
+          <Icon name="arrow-back" size={26} color={colorDark} />
         </Back>
 
         <Container>

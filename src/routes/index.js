@@ -5,6 +5,8 @@ import AuthRoutes from './auth.routes';
 import AppRoutes from './app.routes';
 import { useAuth } from '../hooks/auth';
 
+import { colorDark, colorPrimary } from '../utils/colors';
+
 const Routes = () => {
   const { user, isLoading } = useAuth();
 
@@ -14,9 +16,9 @@ const Routes = () => {
         flex: 1, 
         justifyContent: 'center', 
         alignItems: 'center', 
-        backgroundColor: '#151515' 
+        backgroundColor: colorDark, 
       }}>
-        <ActivityIndicator size="large" color="#136b54" />
+        <ActivityIndicator size="large" color={colorPrimary} />
       </View>
     );
   }
