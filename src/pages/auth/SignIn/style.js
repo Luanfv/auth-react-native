@@ -19,8 +19,3 @@ export const Animation = styled(Lottie)`
   height: 80px;
   width: 100%;
 `;
-
-export const AuthIcon = styled.Image`
-  height: 60px;
-  width: 100%;
-`;

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { colorDark } from '../../../utils/colors';
+import { colorPrimary } from '../../../utils/colors';
 
 export const Container = styled.View`
   padding: 20px 0;
@@ -13,8 +13,7 @@ export const ProfileContainer = styled.View`
 `;
 
 export const ProfileAvatar = styled.View`
-  background-color: ${colorDark};
-  border: ${colorDark} solid 1px;
+  background-color: ${colorPrimary};
   margin-bottom: 15px;
   border-radius: 75px;
   width: 150px;

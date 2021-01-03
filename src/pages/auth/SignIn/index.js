@@ -13,7 +13,7 @@ import Modal from '../../../components/Modal/Message';
 
 import Main from '../../../styles/Main';
 
-import { Back, Container, ContainerIcon, Animation, AuthIcon } from './style';
+import { Back, Container, ContainerIcon, Animation } from './style';
 
 import getValidationErrors from '../../../utils/getValidationErrors';
 
@@ -95,7 +95,7 @@ const SignIn = ({ navigation }) => {
             {
               faseAuth === 0
               &&
-              <AuthIcon source={require('../../../assets/images/auth-bio.png')} resizeMode="contain" />
+              <Icon name="finger-print-outline" size={75} color="#979797" />
             }
 
             {
