@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
 const Txt = styled.Text`
-    /* font-family: 'Roboto-Regular'; */
+    font-family: 'Roboto-Regular';
     font-size: 18px;
-    color: #414141;
+    color: #151515;
     flex-wrap: wrap;
 
     ${props => props.size && `font-size: ${props.size};`}

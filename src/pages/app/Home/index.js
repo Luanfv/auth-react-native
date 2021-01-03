@@ -1,19 +1,24 @@
 import React from 'react';
-import { View } from 'react-native';
 
 import { useAuth } from '../../../hooks/auth';
 
-import Button from '../../../components/Button';
+import Main from '../../../styles/Main';
+import Txt from '../../../styles/Txt';
+import TxtBold from '../../../styles/TxtBold';
+
+import { Container } from './style';
 
 export const Home = () => {
-  const { signOut } = useAuth();
+  const { user } = useAuth();
 
   return (
-    <View>
-      <Button onPress={signOut}>
-        Sair da conta
-      </Button>
-    </View>
+    <Main>
+      <Container>
+        <Txt size="22px">
+          Seja bem-vindo(a), <TxtBold>{user.name}</TxtBold>!
+        </Txt>
+      </Container>
+    </Main>
   );
 }
 
