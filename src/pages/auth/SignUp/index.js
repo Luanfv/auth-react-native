@@ -3,7 +3,7 @@ import { Platform, KeyboardAvoidingView } from 'react-native';
 import { Form } from '@unform/mobile';
 import * as Yup from 'yup';
 import { useNetInfo } from '@react-native-community/netinfo';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
@@ -81,7 +81,7 @@ const SignUp = ({ navigation }) => {
     >
       <Main>
         <Back onPress={() => navigation.goBack()}>
-          <Icon name="arrow-left" size={22} color="#979797" />
+          <Icon name="arrow-back" size={26} color="#151515" />
         </Back>
 
         <Container>
@@ -89,7 +89,7 @@ const SignUp = ({ navigation }) => {
             <Input 
               name="name" 
               title="Nome" 
-              iconName="user" 
+              iconName="person-outline" 
               autoCorrect={false}
               autoCapitalize="none"
               placeholder="Digite seu nome"
@@ -102,7 +102,7 @@ const SignUp = ({ navigation }) => {
               ref={emailRef}
               name="email" 
               title="E-mail" 
-              iconName="envelope" 
+              iconName="mail-outline" 
               autoCorrect={false}
               autoCapitalize="none"
               keyboardType="email-address"
@@ -116,7 +116,7 @@ const SignUp = ({ navigation }) => {
               ref={passwordRef}
               name="password" 
               title="Senha" 
-              iconName="lock"
+              iconName="lock-closed-outline"
               secureTextEntry
               placeholder="******" 
               returnKeyType="next"
@@ -128,7 +128,7 @@ const SignUp = ({ navigation }) => {
               ref={confirmationPasswordRef}
               name="confirmation_password" 
               title="Confirme sua senha" 
-              iconName="lock"
+              iconName="lock-closed-outline"
               secureTextEntry
               placeholder="******" 
               returnKeyType="send"

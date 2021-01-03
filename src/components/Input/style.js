@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import SimpleLineIcons from 'react-native-vector-icons/Ionicons';
 
 export const InputStyle = styled.TextInput`
     border: #979797;

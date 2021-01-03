@@ -3,7 +3,7 @@ import { Platform, KeyboardAvoidingView } from 'react-native';
 import { Form } from '@unform/mobile';
 import * as Yup from 'yup';
 import { useNetInfo } from '@react-native-community/netinfo';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { useAuth } from '../../../hooks/auth';
 
@@ -84,7 +84,7 @@ const SignIn = ({ navigation }) => {
     >
       <Main>
         <Back onPress={() => navigation.goBack()}>
-          <Icon name="arrow-left" size={22} color="#979797" />
+          <Icon name="arrow-back" size={26} color="#151515" />
         </Back>
 
         <Container>
@@ -114,7 +114,7 @@ const SignIn = ({ navigation }) => {
             <Input 
               name="email" 
               title="E-mail" 
-              iconName="envelope" 
+              iconName="mail-outline" 
               autoCorrect={false}
               autoCapitalize="none"
               keyboardType="email-address"
@@ -128,7 +128,7 @@ const SignIn = ({ navigation }) => {
               ref={passwordRef}
               name="password" 
               title="Senha" 
-              iconName="lock"
+              iconName="lock-closed-outline"
               secureTextEntry
               placeholder="******" 
               returnKeyType="send"
